@@ -1,0 +1,246 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', monospace;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: lightblue;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    margin: 20px;
+    padding: 25px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 435px;
+    overflow: hidden;
+    transition: height 0.5s ease;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 550;
+    color: #20343B;
+}
+
+.group {
+    display: flex;
+    align-items: center;
+}
+
+label {
+    display: block;
+    margin-top: 25px;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-size: 16px;
+    background: #f0f4f8;
+    border: 1px solid #ccc;
+    resize: vertical;
+    color: #20343B;
+}
+
+textarea:focus, select:focus {
+    outline: none;
+}
+
+#message:focus {
+    border-color: grey;
+}
+
+select {
+    max-height: 35px;
+    margin-top: 20px;
+    margin-left: 10px;
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 14px; 
+    border: 1px solid grey;
+    cursor: pointer;
+}
+
+.cifrar-btn {
+    width: 100px;
+    height: 45px;
+    padding: 10px;
+    margin-top: 20px;
+    font-weight: 500;
+    font-size: 18px;
+    border: none;
+    border-radius: 6px;
+    background: #8CAFBB;
+    color: #20343B;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.descifrar-btn {
+    width: 100px;
+    height: 45px;
+    padding: 10px;
+    margin-top: 20px;
+    margin-left: 15px;
+    font-weight: 500;
+    font-size: 18px;
+    border: none;
+    border-radius: 6px;
+    background: #BA9B8C;
+    color: #20343B;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.limpiar-btn {
+    width: 100px;
+    height: 45px;
+    padding: 10px;
+    margin-top: 20px;
+    margin-left: 15px;
+    font-weight: 500;
+    font-size: 18px;
+    border: none;
+    border-radius: 6px;
+    background: #ccc;
+    color: #20343B;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.cifrar-btn:hover {
+    background: #6EA0A8;
+}
+
+.descifrar-btn:hover {
+    background: #a98c81;
+}
+
+.limpiar-btn:hover {
+    background: #b3b3b3;
+}
+
+.imagen-desplazamiento {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-radius: 4px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out; 
+    overflow-x: auto;
+    max-height: 0;
+    transition: opacity 1s ease-in-out, max-height 0.5s ease; 
+}
+
+.imagen-desplazamiento.show {
+    opacity: 1;
+    max-height: 600px;
+}
+
+.container.expanded {
+    height: auto;
+}
+
+.casilla {
+    display: inline-block;      
+    width: 65px;                
+    height: 25px;               
+    text-align: center;         
+    vertical-align: middle;      
+    line-height: 25px;          
+    border: 1px solid #ccc;     
+    font-size: 18px;         
+    font-family: monospace;     
+    font-weight: bold;          
+}
+
+.separador {
+    border-top: 2px solid #000;
+    margin: 10px 0;             
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    border-radius: 8px;
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 300px;
+    text-align: center;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #20343B;
+    text-decoration: none;
+}
+
+.title-modal, .text-modal {
+    text-align: left;
+}
+
+.title-modal {
+    color: #20343B;
+    font-size: 22px;
+}
+
+.text-modal {
+    margin-top: 15px;
+}
+
+.modal-footer {
+    text-align: right;
+}
+
+.close-btn {
+    margin-top: 15px;
+    background-color: #20343B;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.close-btn:hover {
+    background-color: #182c32;
+}

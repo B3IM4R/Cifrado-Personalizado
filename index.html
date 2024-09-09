@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Programa para cifrar y descifrar mensajes en Código Morse">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Cifrado con Código Morse</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Cifrado con Código Morse</h1>
+        <div>
+            <label for="message">Mensaje:</label>
+            <textarea id="message" rows="3" placeholder="Escribe aquí"></textarea>
+        </div>
+        <div class="group">
+            <label for="displacement">Desplazamiento:</label>
+            <select id="displacement">
+                <script>
+                    for (let i = 0; i <= 25; i++) {
+                        document.write('<option value="' + i + '">' + i + '</option>');
+                    }
+                </script>
+            </select>
+        </div>
+        <button type="button" class="cifrar-btn" onclick="cifrarTexto()">Cifrar</button>
+        <button type="button" class="descifrar-btn" onclick="descifrarTexto()">Descifrar</button>
+        <button type="button" class="limpiar-btn" onclick="limpiarCampos()">Limpiar</button>
+        <div>
+            <label for="encryptedMessage">Resultado:</label>
+            <textarea id="encryptedMessage" rows="3" placeholder="Ningún Mensaje" readonly></textarea>
+        </div>
+        
+        <div id="alfabetoContainer" class="table-container imagen-desplazamiento">
+            <div id="alfabetoOriginal"></div>
+            <div id="alfabetoDesplazado"></div>
+        </div>
+    </div>
+    <div id="messageModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 class="title-modal">Sistema</h3>
+            <p class="text-modal"></p>
+            <div class="modal-footer">
+                <button class="close-btn">Cerrar</button>
+            </div>
+        </div>
+    </div>
+    <script src="./js/script.js"></script>
+</body>
+</html>
